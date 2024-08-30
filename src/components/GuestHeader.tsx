@@ -9,7 +9,7 @@ const GuestHeader = () => {
       <div className="container flex justify-between items-center p-4">
         <Link
           href={"/"}
-          className="transition-all hover:text-primary"
+          className="transition-all hover:text-primary w-10"
         >
           <Logo />
         </Link>
