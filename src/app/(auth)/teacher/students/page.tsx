@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/shadcn/Button";
 import { Input } from "@/components/ui/shadcn/Input";
+import classRoomsArray from "@/data/classrooms";
 import {
   Table,
   TableHeader,
@@ -14,15 +15,7 @@ import { Tab, Tabs } from "@nextui-org/tabs";
 import { Add } from "iconsax-react";
 import { Key, useState } from "react";
 
-const classRooms = [
-  "Tutte",
-  "1° SF 23/24",
-  "2° SF 23/24",
-  "3° SF 23/24",
-  "1° WD 23/24",
-  "2° WD 23/24",
-  "FS 23/24",
-];
+const classRooms = ["Tutte", ...classRoomsArray.map((cr) => cr.name)];
 
 const stArray: any[] = [
   {
