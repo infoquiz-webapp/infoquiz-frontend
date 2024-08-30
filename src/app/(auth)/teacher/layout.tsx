@@ -9,7 +9,7 @@ const TeacherLayout = ({ children }: Props) => {
     <>
       <TeacherHeader />
       {/* CONTENT */}
-      <main className="flex justify-center items-center p-4 lg:p-8 !pt-24 gap-4">
+      <main className="flex justify-center items-center !pt-24 gap-4">
         {children}
       </main>
     </>
