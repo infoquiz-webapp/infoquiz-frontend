@@ -31,28 +31,33 @@ const TeacherHeader = ({}: Props) => {
           <Logo />
         </Link>
         <ul className="flex gap-4">
-          {menuItems.map((item) => (
-            <li
-              key={item.href}
-              className={cn(
-                pathname !== item.href &&
-                  "opacity-60 hover:opacity-90 transition-all"
-              )}
-            >
-              <RoughNotation
-                type="underline"
-                show={pathname === item.href}
-                color="hsl(var(--nextui-primary))"
+          {menuItems.map((item) => {
+            const isActive =
+              item.href === "/teacher"
+                ? pathname === item.href
+                : pathname.startsWith(item.href);
+            return (
+              <li
+                key={item.href}
+                className={cn(
+                  !isActive && "opacity-60 hover:opacity-90 transition-all"
+                )}
               >
-                <Link
-                  href={item.href}
-                  className="p-1"
+                <RoughNotation
+                  type="underline"
+                  show={isActive}
+                  color="hsl(var(--nextui-primary))"
                 >
-                  {item.label}
-                </Link>
-              </RoughNotation>
-            </li>
-          ))}
+                  <Link
+                    href={item.href}
+                    className="p-1"
+                  >
+                    {item.label}
+                  </Link>
+                </RoughNotation>
+              </li>
+            );
+          })}
         </ul>
         <UserDropdown />
       </div>
