@@ -13,7 +13,7 @@ const config = {
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
-    "./node_modules/@nextui-org/theme/dist/components/(button|divider|spinner|table|tabs|ripple|checkbox|spacer).js"
+    "./node_modules/@nextui-org/theme/dist/components/(button|card|divider|spinner|table|tabs|ripple|checkbox|spacer).js"
   ],
   prefix: "",
   theme: {
