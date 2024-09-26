@@ -46,7 +46,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
         {},
         {
           headers: {
-            Authorization: `Basic ${data.email}:${data.password}`,
+            Authorization: `Basic ${btoa(`${data.email}:${data.password}`)}`,
           },
         }
       )
