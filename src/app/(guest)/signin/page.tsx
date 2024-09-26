@@ -36,7 +36,7 @@ export default function AuthenticationPage() {
       </div>
 
       {/* CONTAINER */}
-      <div className="container p-0 overflow-hidden rounded-[0.5rem] border border-default-100 shadow relative z-10">
+      <div className="container p-0 overflow-hidden rounded-[0.5rem] border border-default-100 shadow relative z-10 max-w-[400px] lg:max-w-none">
         <div className="relative lg:min-h-[800px] flex-col items-center justify-center md:grid lg:grid-cols-2 lg:p-0">
           {/* LEFT SIDE */}
           <div className="relative hidden h-full flex-col bg-muted p-10 lg:flex bg-transparent bg-gradient-to-bl from-default-900 to-default-700 dark:from-primary/10 dark:to-primary/0 dark:backdrop-blur-sm text-background dark:text-foreground">
@@ -64,7 +64,7 @@ export default function AuthenticationPage() {
 
           {/* RIGHT SIDE */}
           <div className="p-4 lg:p-8 bg-background h-full flex items-center justify-center">
-            <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
+            <div className="mx-auto flex w-full flex-col justify-center space-y-6 max-w-[350px]">
               {/* HEADER */}
               <div className="flex flex-col space-y-2 text-center">
                 <h1 className="text-3xl font-bold tracking-tight">

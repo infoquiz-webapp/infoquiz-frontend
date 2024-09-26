@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/shadcn/Button";
 import { Input } from "@/components/ui/shadcn/Input";
 import { Label } from "@/components/ui/shadcn/Label";
 import PasswordInput from "@/components/ui/shadcn/PasswordInput";
+import { apiUrls } from "@/data/backend";
 import { cn } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Spinner } from "@nextui-org/spinner";
@@ -12,7 +13,7 @@ import { LoginCurve } from "iconsax-react";
 import { HTMLAttributes, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-
+import axios from "axios";
 interface UserAuthFormProps extends HTMLAttributes<HTMLDivElement> {}
 
 export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
@@ -39,9 +40,24 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
     console.log(data);
     setIsLoading(true);
 
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 3000);
+    axios
+      .post(
+        apiUrls.auth.signIn,
+        {},
+        {
+          headers: {
+            Authorization: `Basic ${data.email}:${data.password}`,
+          },
+        }
+      )
+      .then((res) => {
+        console.log(res);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setIsLoading(false);
+      });
   };
 
   return (
